@@ -1,2 +1,3 @@
 # gtm-engineer-portfolio
 GTM Engineer training portfolio
+This is a repository where I will store all of the projects, documents, and information that I gather on my journey to train to become a go-to-market engineer and learn how to use AI tools to make marketers and salespeople more efficient. The goal of this is to land a go-to-market engineer role in New York City and move there, and start the role by April 1, 2027. 
