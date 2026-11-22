@@ -2,7 +2,7 @@
 
 ## Top Tools
 
-- Salesforece
+- Salesforce
 - Clay
 - Zapier
 - n8n
@@ -19,7 +19,7 @@
 
 # Languages
 
-- Pyhthon
+- Python
 - SQL
 
 ## Voice Note Overview
