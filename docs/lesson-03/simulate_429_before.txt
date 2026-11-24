@@ -1,0 +1,5 @@
+Attempt 1 got a simulated 429. Waiting 2s.
+Attempt 2 got a simulated 429. Waiting 2s.
+604340802296 | Test  Test Email 1 | testemail1@example.com
+605609476814 | Brian Halligan (Sample Contact) | bh@hubspot.com
+605610798808 | Maria Johnson (Sample Contact) | emailmaria@hubspot.com

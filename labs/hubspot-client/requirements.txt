@@ -1,0 +1,2 @@
+requests
+urllib3<2  # system Python 3.9 on macOS uses LibreSSL, which urllib3 v2 does not support
