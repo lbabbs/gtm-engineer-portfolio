@@ -1,0 +1,7 @@
+{
+  "event_id": "evt_103",
+  "name": "Jane Doe",
+  "email": "JANE.DOE@Acme.com",
+  "source": "linkedin",
+  "intent": "pricing"
+}

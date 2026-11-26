@@ -1,0 +1,222 @@
+{
+  "name": "L04 Demo Request Webhook",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "demo-request",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "f5e36fc3-dd09-45d3-a77b-9ed9d7778b28",
+      "name": "Webhook",
+      "webhookId": "9b4badfe-82b2-49fe-8868-7860960b726a"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "183bf684-1d5d-40c1-a9e9-8d14a15b2ad8",
+              "name": "email",
+              "value": "={{ ($json.body.email ?? '').trim().toLowerCase() }}",
+              "type": "string"
+            },
+            {
+              "id": "2ca79c2f-54f6-4d87-8ed2-631118458ded",
+              "name": "event_id",
+              "value": "={{ $json.body.event_id || $execution.id }}",
+              "type": "string"
+            },
+            {
+              "id": "486d7fd2-993d-445c-a93b-71ac331861ad",
+              "name": "person_id",
+              "value": "={{ ($json.body.email ?? '').trim().toLowerCase() }}",
+              "type": "string"
+            },
+            {
+              "id": "1910030f-7058-4f94-859f-b6f6c6b9c1aa",
+              "name": "name",
+              "value": "={{ ($json.body.name ?? '').trim()}}",
+              "type": "string"
+            },
+            {
+              "id": "947749f0-f691-4a05-90a3-3e1a6207ff78",
+              "name": "domain",
+              "value": "={{ ($json.body.email ?? \"\").trim().toLowerCase().split('@')[1] }}",
+              "type": "string"
+            },
+            {
+              "id": "5bc934ba-1b0d-4adf-b3ac-5862feec4146",
+              "name": "intent",
+              "value": "={{ ($json.body.intent ?? '').trim().toLowerCase() }}",
+              "type": "string"
+            },
+            {
+              "id": "0a78fa6f-99a4-453b-be5c-94a98aa4ee62",
+              "name": "source",
+              "value": "={{ ($json.body.source ?? '').trim().toLowerCase() || 'unknownn' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "f3abc184-69e6-4cf9-8cc3-de792a9a6a54",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "d6105785-5085-45e2-8f8e-024583602412",
+              "leftValue": "={{ $json.email }}",
+              "rightValue": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+              "operator": {
+                "type": "string",
+                "operation": "regex"
+              }
+            },
+            {
+              "id": "3f8b4e18-b0ad-4046-95c3-2f7a4613794f",
+              "leftValue": "={{ $json.name }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "f913405a-7f3f-4219-9308-b6d7e27d5e41",
+              "leftValue": "={{ $json.intent }}",
+              "rightValue": "^(demo|pricing|trial)$",
+              "operator": {
+                "type": "string",
+                "operation": "regex"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.4,
+      "position": [
+        448,
+        0
+      ],
+      "id": "0918ee1b-8566-4f84-b294-5627c0591d9e",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\"status\":\"accepted\",\"event_id\":\"{{ $json.event_id }}\",\"person_id\":\"{{ $json.person_id }}\"}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        0
+      ],
+      "id": "86150697-2b90-4bff-a992-7f8e6cc34e66",
+      "name": "Respond 200 Accepted"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\"status\":\"rejected\",\"message\":\"Need valid email address, non empty name, and intent of demo,pricing, or trial\", \"event_id\":\"{{ $json.event_id }}\"}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        720,
+        144
+      ],
+      "id": "5da2245c-604d-4556-84e3-11faad7ddc6f",
+      "name": "Response 400 Rejected"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Respond 200 Accepted",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Response 400 Rejected",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "e3bf7f40-bd98-4ef8-99ab-9e75ae2137f8",
+  "meta": {
+    "instanceId": "57738e6d7cb0540d1bb04bdbd30b87a70cde70d391a7036306925d8c2af95180"
+  },
+  "nodeGroups": [],
+  "id": "KK33MfmLdeuVRFJl",
+  "tags": []
+}
