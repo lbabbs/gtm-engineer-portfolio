@@ -107,10 +107,11 @@ Results: see `results.md`.
 - [x] Unpin Webhook data, Publish, run all 8 payloads against the production URL
 - [x] Fill in `results.md` (status, response body, execution ID, pass/fail)
 - [x] Compare valid-01 and valid-03 responses (same person_id, different event_id)
-- [ ] Fix the `essage` typo in Response 400 Rejected, rerun invalid-01 to 03, update results.md
-- [ ] Unpublish the workflow
-- [ ] Export the workflow to `labs/n8n-demo-webhook/workflow.json`
-- [ ] Commit with a message starting `L04:` and link this folder in the tracker
+- [x] Fix the `essage` typo in Response 400 Rejected (fix confirmed in the export, rerun happens in Lesson 5)
+- [x] Unpublish the workflow
+- [x] Export the workflow to `labs/n8n-demo-webhook/workflow.json`
+- [x] Commit with a message starting `L04:` and link this folder in the tracker
+- [ ] Fix `source` fallback typo (`unknownn`) in n8n and re-export
 
 ## Docs
 

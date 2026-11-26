@@ -61,7 +61,7 @@
             {
               "id": "0a78fa6f-99a4-453b-be5c-94a98aa4ee62",
               "name": "source",
-              "value": "={{ ($json.body.source ?? '').trim().toLowerCase() || 'unknownn' }}",
+              "value": "={{ ($json.body.source ?? '').trim().toLowerCase() || 'unknown' }}",
               "type": "string"
             }
           ]
@@ -212,7 +212,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "e3bf7f40-bd98-4ef8-99ab-9e75ae2137f8",
+  "versionId": "1970caca-4d64-4917-9ce4-03da94414623",
   "meta": {
     "instanceId": "57738e6d7cb0540d1bb04bdbd30b87a70cde70d391a7036306925d8c2af95180"
   },

@@ -9,7 +9,7 @@ My GTM Engineer training work, program v12.1 (builder track).
 - README.md         index of everything in the repo
 
 ## Stack
-Hosted n8n, HubSpot developer test account (Service Key), Salesforce Developer Edition, Supabase Postgres, Clay, Claude API. Python 3.12 in a .venv.
+Hosted n8n, HubSpot developer test account (Service Key), Salesforce Developer Edition, Supabase Postgres, Clay, Claude API. Python in a .venv.
 
 ## Repo rules
 - Commit messages start with the lesson number, like "L02: read a contact with the Service Key".

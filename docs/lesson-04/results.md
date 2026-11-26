@@ -23,7 +23,7 @@ curl -s -w "\nHTTP %{http_code}\n\n" -X POST "<production URL>" -H "Content-Type
 
 \* The 200 response doesn't include `source`. Confirm `source = unknown` in the Edit Fields output of execution 21.
 
-\*\* Routing and status are correct, but the response key is misspelled `essage` (should be `message`). See findings.
+\*\* Routing and status are correct. In this run the response key was misspelled `essage`. It was fixed to `message` after the run, confirmed in `labs/n8n-demo-webhook/Workflow.json`. Rows 6 to 8 show the output as actually recorded.
 
 **Summary:** 8 of 8 payloads returned the expected status code. 5 accepted, 3 rejected, no node errors.
 
@@ -46,5 +46,5 @@ curl -s -w "\nHTTP %{http_code}\n\n" -X POST "<production URL>" -H "Content-Type
 
 ## Findings
 
-1. **Typo in the 400 response key: `essage` instead of `message`.** Introduced when renaming `Message` to `message`. A system reading `message` would find nothing. Fix in Response 400 Rejected, then rerun invalid-01 to 03 and update rows 6 to 8.
+1. **Typo in the 400 response key: `essage` instead of `message`. Fixed.** Introduced when renaming `Message` to `message`. A system reading `message` would have found nothing. Corrected in Response 400 Rejected after this run (see the workflow export). Lesson 5 reruns all 8 payloads, which will record the corrected response.
 2. **The rejection message is the same for every failure.** It lists all requirements but doesn't say which one failed. Acceptable for this lab. A later improvement is a field-specific reason.
