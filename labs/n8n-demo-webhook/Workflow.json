@@ -132,7 +132,7 @@
     {
       "parameters": {
         "respondWith": "json",
-        "responseBody": "={\"status\":\"accepted\",\"event_id\":\"{{ $json.event_id }}\",\"person_id\":\"{{ $json.person_id }}\"}",
+        "responseBody": "={\"status\":\"accepted\",\"event_id\":\"{{ $('Edit Fields').item.json.event_id }}\",\"source\":\"{{ $('Edit Fields').item.json.source }}\",\"hubspot_match\":{{ $json.total > 0 }}}",
         "options": {
           "responseCode": 200
         }
@@ -140,7 +140,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        672,
+        896,
         0
       ],
       "id": "86150697-2b90-4bff-a992-7f8e6cc34e66",
@@ -157,11 +157,39 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        720,
+        944,
         144
       ],
       "id": "5da2245c-604d-4556-84e3-11faad7ddc6f",
       "name": "Response 400 Rejected"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.hubapi.com/crm/v3/objects/contacts/search",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"filterGroups\":[{\"filters\":[{\"propertyName\":\"email\",\"operator\":\"EQ\",\"value\":\"{{ $json.email }}\"}]}],\"properties\":[\"email\",\"firstname\",\"lastname\"],\"limit\":1}",
+        "options": {
+          "timeout": 5000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        672,
+        0
+      ],
+      "id": "4b4ceb53-8a6c-4627-b06b-9dd65fd93dd1",
+      "name": "HTTP Request",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "oWoTNO58Wi7SPvEX",
+          "name": "Header Auth account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -192,7 +220,7 @@
       "main": [
         [
           {
-            "node": "Respond 200 Accepted",
+            "node": "HTTP Request",
             "type": "main",
             "index": 0
           }
@@ -205,14 +233,31 @@
           }
         ]
       ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Respond 200 Accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
     "executionOrder": "v1",
-    "binaryMode": "separate"
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
   },
-  "versionId": "1970caca-4d64-4917-9ce4-03da94414623",
+  "versionId": "fff086c6-e407-490b-bb31-ee80f79cf7ea",
   "meta": {
     "instanceId": "57738e6d7cb0540d1bb04bdbd30b87a70cde70d391a7036306925d8c2af95180"
   },
