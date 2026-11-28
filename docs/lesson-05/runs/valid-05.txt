@@ -1,0 +1,18 @@
+HTTP/2 200 
+date: Sat, 28 Nov 2026 00:27:40 GMT
+content-type: application/json; charset=utf-8
+content-length: 78
+cf-ray: a6153f855edd152b-SJC
+cf-cache-status: DYNAMIC
+etag: W/"4e-nRX1SPWVNWS2V/7XS9D80o9eukU"
+server: cloudflare
+strict-transport-security: max-age=15552000; includeSubDomains
+vary: Accept-Encoding, Accept-Encoding
+content-security-policy: sandbox allow-downloads allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-top-navigation-by-user-activation allow-top-navigation-to-custom-protocols
+referrer-policy: same-origin
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=F%2BIqwO7Z%2FnHqDXOmhzoFN0TPqd6PZ85NaLBZa1s%2FQ4Mk7LR9AcDZwmUujlXY9NMZ52kWxE%2BSh3Lg5RUgmto%2BXLiFjHhHbZw94NHVesMKkYjQtPGC1851%2FpCFMaFjRQsuBX1lrNEu"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+
+{"status":"accepted","event_id":"34","source":"website","hubspot_match":false}

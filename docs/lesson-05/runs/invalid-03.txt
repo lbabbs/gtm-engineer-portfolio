@@ -1,0 +1,18 @@
+HTTP/2 400 
+date: Sat, 28 Nov 2026 00:27:47 GMT
+content-type: application/json; charset=utf-8
+content-length: 133
+cf-ray: a6153fb438352fe9-SJC
+cf-cache-status: DYNAMIC
+etag: W/"85-iCDi8vQm1FXXxPRGfQhpjvtXjHc"
+server: cloudflare
+strict-transport-security: max-age=15552000; includeSubDomains
+vary: Accept-Encoding, Accept-Encoding
+content-security-policy: sandbox allow-downloads allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-top-navigation-by-user-activation allow-top-navigation-to-custom-protocols
+referrer-policy: same-origin
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=I27t3zg9ke4LesX5EG1xmbE9oT9GjS0ltQLQO1kJx8crh1TrmvONRLdn1Ck3l5uVcmDBcbYc7q9jzU2oNDNVjp5CtNJlYph5FOlq70UA0H%2B8%2FZJJBrH1D8Ega%2Fq7ZH2LEOIBM%2Bzi"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+
+{"status":"rejected","message":"Need valid email address, non empty name, and intent of demo,pricing, or trial","event_id":"evt_903"}

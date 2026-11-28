@@ -43,3 +43,8 @@ Date checked: 2026-11-27
 - Malformed JSON (a broken envelope, like a missing closing brace) can't be parsed into fields, so it most likely fails at the Webhook, before Edit Fields runs. The If node and Respond 400 never get it.
 - Does an execution appear? My prediction: ____ (yes or no, fill in before Part 4)
 - Actual result (fill in after Part 4):
+
+
+## Baseline
+
+After 8 test runs, there are still only 3 contacts so this shows us that looking up data in the database does not create new contacts.
