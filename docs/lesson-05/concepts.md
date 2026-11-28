@@ -48,3 +48,7 @@ Date checked: 2026-11-27
 ## Baseline
 
 After 8 test runs, there are still only 3 contacts so this shows us that looking up data in the database does not create new contacts.
+
+Malformed JSON Prediction Question:
+
+- Actual result: 422 from n8n execution did not appear.
