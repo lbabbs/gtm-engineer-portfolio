@@ -1,0 +1,18 @@
+HTTP/2 500 
+date: Sat, 28 Nov 2026 01:23:02 GMT
+content-type: application/json; charset=utf-8
+content-length: 31
+cf-ray: a615909fcb3bcf21-SJC
+cf-cache-status: DYNAMIC
+etag: W/"1f-ccITd5ldGQPMVB1CUICVlV/ylNg"
+server: cloudflare
+strict-transport-security: max-age=15552000; includeSubDomains
+vary: Accept-Encoding, Accept-Encoding
+content-security-policy: sandbox allow-downloads allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-top-navigation-by-user-activation allow-top-navigation-to-custom-protocols
+referrer-policy: same-origin
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=R8mofidmzAv%2FqddDbIQQ0lRhPTnRuEJVzdGNJLot%2FiGQtC5DssbAl8yVsdSy13isDMQOx1nBnT5hHJdNfdXNL1K7dlVwn0TZAR0GN3mFprrqEFthgRv%2BCFIoNsThyhFYNZ96nU4s"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+
+{"message":"Error in workflow"}

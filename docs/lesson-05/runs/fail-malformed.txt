@@ -1,0 +1,18 @@
+HTTP/2 422 
+date: Sat, 28 Nov 2026 01:39:54 GMT
+content-type: application/json; charset=utf-8
+content-length: 141
+cf-ray: a615a959bf546e82-SJC
+cf-cache-status: DYNAMIC
+etag: W/"8d-uQsGm/dTJcRmK/3rYdb1Bfg0ewU"
+server: cloudflare
+strict-transport-security: max-age=15552000; includeSubDomains
+vary: Accept-Encoding, Accept-Encoding
+content-security-policy: sandbox allow-downloads allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-top-navigation-by-user-activation allow-top-navigation-to-custom-protocols
+referrer-policy: same-origin
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=3PM0Z%2FvpwDTjIfbEBKLMkc%2FK%2B8iUPBzw9xwrTL0vJ74kvQpUkJ1mvT2XlkiH2MLIECLBrWn%2FkHq9FUVZA9clEXkEFKNCuv1KwxOETNGi3vqTmYXWGGY%2FpS%2F81aV4jQjuRtbvTHor"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+
+{"code":422,"message":"Failed to parse request body","hint":"Expected double-quoted property name in JSON at position 39 (line 1 column 40)"}
